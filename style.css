@@ -1,0 +1,242 @@
+/* إعادة تعيين القيم الافتراضية */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* تعريف المتغيرات للألوان الأساسية */
+:root {
+  --primary: #2c3e50;
+  --accent: #e74c3c;
+  --light: #ecf0f1;
+  --dark: #34495e;
+}
+
+/* تنسيق الجسم والخلفية */
+body {
+  font-family: 'Cairo', sans-serif;
+  background: linear-gradient(135deg, var(--dark), var(--primary));
+  color: var(--light);
+  line-height: 1.6;
+}
+
+/* تنسيق الهيدر */
+header {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  position: relative;
+}
+.profile-img {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid var(--accent);
+  transition: transform 0.3s ease-in-out;
+}
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profile-img:hover {
+  transform: scale(1.1);
+}
+header h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+}
+header p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+.dynamic-btn {
+  background: var(--accent);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  color: var(--light);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.dynamic-btn:hover {
+  background: #c0392b;
+}
+
+/* تنسيق قائمة التنقل */
+nav {
+  text-align: center;
+  padding: 10px 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+nav a {
+  color: var(--light);
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.1em;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: var(--accent);
+}
+
+/* تنسيق المحتوى الرئيسي */
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+section {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+section h2 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+}
+section p {
+  font-size: 1.1em;
+}
+
+/* بطاقات الخدمات */
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card {
+  flex: 1;
+  min-width: 250px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.card p {
+  font-size: 1em;
+}
+
+/* تنسيق شهادات الاعتماد */
+.certifications-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.certifications-container img {
+  width: 200px;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.certifications-container img:hover {
+  transform: scale(1.05);
+}
+
+/* تنسيق قصص النجاح */
+.testimonials-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 0;
+}
+.testimonial {
+  flex: 0 0 auto;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+}
+.testimonial p {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+.testimonial span {
+  font-size: 0.9em;
+  color: #bdc3c7;
+}
+
+/* تنسيق المودال */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: var(--primary);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+.modal-content h2 {
+  margin-bottom: 20px;
+}
+.modal-content p {
+  margin-bottom: 20px;
+}
+.modal-content form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+}
+.modal-content form button {
+  background: var(--accent);
+  color: var(--light);
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.modal-content form button:hover {
+  background: #c0392b;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: var(--light);
+}
+
+/* استجابة التصميم للشاشات الصغيرة */
+@media (max-width: 768px) {
+  header h1 { font-size: 2.2em; }
+  header p { font-size: 1em; }
+  nav a { font-size: 1em; margin: 0 10px; }
+  section h2 { font-size: 1.8em; }
+}
